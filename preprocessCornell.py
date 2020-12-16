@@ -5,7 +5,6 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers , activations , models , preprocessing , utils
 from nltk.translate.bleu_score import sentence_bleu
-import pandas as pd
 
 
 class cornellConvo:

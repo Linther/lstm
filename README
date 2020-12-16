@@ -1,0 +1,33 @@
+Alejandro Lobo Mujica, 0911715, 15/12/2020
+***********************************************************************
+
+CinemaModel
+
+Description:
+CinemaModel.py can be used to train sequence to sequence lstm based models for conversational AI.
+
+
+
+Usage:
+    python CinemaModel.py 
+                            -train <name of model> <corpus file>
+                                        OR
+                            -load <path to model> <corpus file> <batch size> <epoch count>
+                                        Optional
+                            -bleu
+                                This will randomly select input lines from the file to feed to
+                                the encoder/decoder and will calculate the bleu score
+Files:
+root:
+    cornell_corpus:
+        1movie.txt          |   Index of lines from Conversations from 1 movie that can be used to train tiny model to test program
+        72movies.txt        |   Index of lines from Conversations from multiple movies that can be used to train larger models
+        movie_lines.txt     |   All the lines from all the movies to be referenced by previous 2 files
+        All others are stray files from orignal database, left them there in case you wanted to browse through them
+    Models:
+        A collection of models trained with on the data set with varying Batch Sizes and Epoch ranges
+        hugeModel is the best to load and test.
+
+Prerequisites:
+- tensorFlow (with Keras)
+- nltk (for bleu scoring)
