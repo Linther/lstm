@@ -35,20 +35,20 @@ def main():
     for i, commandLineArg in enumerate(sys.argv):
         if (commandLineArg == "-load") and (len(sys.argv) - i >= 2):
             modelPath = sys.argv[i + 1]
-            # movieConvoPath = sys.argv[i + 2]
+            movieConvoPath = sys.argv[i + 2]
         elif (commandLineArg == "-train"):
             modelPath = sys.argv[i + 1]
-            batchSize = int(sys.argv[i + 2])
-            epochCount = int(sys.argv[i + 3])
-            # movieConvoPath = sys.argv[i + 4]
+            movieConvoPath = sys.argv[i + 2]
+            batchSize = int(sys.argv[i + 3])
+            epochCount = int(sys.argv[i + 4])
             newModelMode = True
         elif commandLineArg == "-bleu":
             bleuMode = True
         else:
             print("Incorrect Usage! Please consult the README for instructions")
     
-    # if not movieConvoPath:
-    movieConvoPath = "Datasets\cornell movie-dialogs corpus\\72movies.txt"
+    if not movieConvoPath:
+        movieConvoPath = "cornell_corpus\\72movies.txt"
     # print (modelPath)
 
 
